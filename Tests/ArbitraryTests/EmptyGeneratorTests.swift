@@ -5,7 +5,7 @@ import XCTest
 final class EmptyGeneratorTests: XCTestCase {
 
 	func testGeneration() {
-		let generator = Generator.Empty<Int>()
+		let generator = Generator.Empty<Int>().eraseToAnyGenerator()
 
 		for _ in 1...100 {
 			XCTAssertNil(generator.next())
