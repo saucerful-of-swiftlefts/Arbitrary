@@ -1,0 +1,29 @@
+name: "Testing"
+
+on:
+- push
+- pull_request
+
+jobs:
+  test-macos:
+    name: "Test on macOS"
+    runs-on: macos-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Build
+      run: swift build --enable-test-discovery
+    - name: Check All Tests
+      run: swift test --enable-test-discovery
+  test-linux:
+    name: "Test on Linux"
+    container:
+      image: swift:5.3
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Build
+      run: swift build --enable-test-discovery
+    - name: Check All Tests
+      run: swift test --enable-test-discovery
