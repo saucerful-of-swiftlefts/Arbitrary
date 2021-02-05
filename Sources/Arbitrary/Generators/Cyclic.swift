@@ -10,3 +10,10 @@ public extension Generator {
 		}
 	}
 }
+
+public extension GenerativeSequence {
+
+	func cyclic() -> Generator.Cyclic<Self.Element, Self> {
+		.init(self)
+	}
+}
