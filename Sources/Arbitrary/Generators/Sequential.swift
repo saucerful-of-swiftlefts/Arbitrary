@@ -1,5 +1,5 @@
 public extension Generator {
-	struct Sequential<Element>: Sequence, IteratorProtocol {
+	struct Sequential<Element>: GenerativeSequence {
 
 		private var source: Closure<Element>
 

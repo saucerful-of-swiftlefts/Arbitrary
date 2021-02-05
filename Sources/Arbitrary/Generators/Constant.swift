@@ -1,5 +1,5 @@
 public extension Generator {
-	struct Constant<Element>: Sequence, IteratorProtocol {
+	struct Constant<Element>: GenerativeSequence {
 
 		private let source: Closure<Element>
 

@@ -1,5 +1,5 @@
 public extension Generator {
-	struct Empty<Element>: Sequence, IteratorProtocol {
+	struct Empty<Element>: GenerativeSequence {
 
 		public init() {
 		}
