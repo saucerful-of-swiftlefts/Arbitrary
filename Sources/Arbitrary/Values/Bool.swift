@@ -1,7 +1,7 @@
 extension Bool {
 	
 	static var arbitrary: AnyGenerator<Bool> {
-		Generator.Empty<Bool>()
+		Generator.Sequential<Bool>(from: [false, true])
 			.eraseToAnyGenerator()
 	}
 }
