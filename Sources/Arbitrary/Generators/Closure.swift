@@ -1,12 +1,14 @@
 public extension Generator {
 	struct Closure<Element>: Sequence, IteratorProtocol {
 
-		public init(_ block: @escaping () -> Element?) {
+		private let source: () -> Element?
 
+		public init(_ block: @escaping () -> Element?) {
+			source = block
 		}
 
 		public func next() -> Element? {
-			nil
+			source()
 		}
 	}
 }
