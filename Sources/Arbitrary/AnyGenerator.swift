@@ -8,3 +8,10 @@ public struct AnyGenerator<Element>: GenerativeSequence {
 		nil
 	}
 }
+
+public extension GenerativeSequence {
+
+	func eraseToAnyGenerator() -> AnyGenerator<Element> {
+		.init(self)
+	}
+}
