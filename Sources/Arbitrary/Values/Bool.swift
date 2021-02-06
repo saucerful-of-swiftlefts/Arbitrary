@@ -1,6 +1,6 @@
-extension Bool {
+extension Bool: ArbitrarilyIterable {
 	
-	static var arbitrary: AnyGenerator<Bool> {
+	public static var arbitrary: AnyGenerator<Bool> {
 		Generator.Sequential<Bool>(from: [false, true])
 			.cyclic()
 			.shuffled()
